@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //Import components
 import Home from './components/home';
+import Login from './components/login';
 //import { NavBar } from "./components/navbar/navbar";
 
 //Main App component - put everything here
@@ -11,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Switch>
       <Route exact path="/" component={ Home } />
-  {/*     <Route path="/about" component={ About } />
-      <Route path="/:user" component={ User } />
+      <Route path="/login" component={ Login } />
+   {/*   <Route path="/:user" component={ User } />
       <Route component={ NoMatch } />
     */}     
       </Switch>
