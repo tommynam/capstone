@@ -12,8 +12,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan("combined"));
 
-const Service = require("./Service");
-const Router = require("./Router");
+const Service = require("./service");
+const Router = require("./routers");
 
 const linkService = new Service(knex);
 
