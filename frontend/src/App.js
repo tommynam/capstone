@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //Import components
 import Home from './components/home';
 import Login from './components/login';
+
 //import { NavBar } from "./components/navbar/navbar";
 
 //Main App component - put everything here
