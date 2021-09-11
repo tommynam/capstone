@@ -2,6 +2,7 @@ import React from 'react';
 import { LeftBar } from "./leftBar";
 import { RightBar } from "./rightBar";
 
+
 const boxStyle = {
     borderRadius: 50,
     height: "80vh",
