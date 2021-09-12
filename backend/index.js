@@ -4,8 +4,8 @@ const cors = require("cors");
 const morgan = require("morgan");
 
 //REQUIRING SERVICE/ROUTERS
-const Service = require("./service");
-const Router = require("./router");
+const DBService = require("./service");
+const DBRouter = require("./router");
 
 //KNEX SETUP
 const knexConfig = require("./knexfile").development;
@@ -21,9 +21,9 @@ app.use(morgan("combined"));
 
 ///////
 
-const knexService = new Service(knex);
+const knexService = new DBService(knex);
 
-app.use("/api/users/", new Router(Service).router());
+app.use("/api/users/", new DBRouter(Service).router());
 
 app.listen(8080, () => {
   console.log("Application listening to port 8080");
