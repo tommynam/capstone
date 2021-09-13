@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <div style={styles}>
             <div className="infoBox" style={infoStyle}>
-                <h1>iStudy Abroad</h1>
+                <h1>iSftudy Abroad</h1>
                 <p>
                 iStudyAbroad is a search engine that helps you plan for your courses and immigration requirements. Start today and help us plan your future.
                 </p>
