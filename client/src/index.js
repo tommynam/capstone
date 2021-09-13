@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+//const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware()}>
-    <App />
-  </Provider>,
+  //<Provider store={createStoreWithMiddleware()}>
+    <App />,
+  //</Provider>,
   document.getElementById('root')
 );
 
