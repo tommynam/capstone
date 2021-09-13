@@ -1,8 +1,8 @@
-  const express = require("express");
+const express = require("express");
 
-class LinkRouter {
-  constructor(linkService) {
-    this.linkService = linkService;
+class DBRouter {
+  constructor(DBService) {
+    this.linkService = DBService;
   }
   router() {
     let router = express.Router();
@@ -17,22 +17,22 @@ class LinkRouter {
   get(req, res) {
     console.log("reached backend");
 
-    return this.linkService
+    return this.DBService
       .list(req.query.search)
-      .then((links) => {
-        res.json(links);
+      .then((data) => {
+        res.json(data);
       })
       .catch((err) => res.status(500).json(err));
   }
 
   post(req, res) {
     console.log("reached backend");
-    return this.linkService
-      .addLink(req.body)
-      .then(() => this.linkService.list())
-      .then((links) => res.json(links))
+    return this.DBService
+      .add(req.body)
+      .then(() => this.DBService.list())
+      .then((data) => res.json(data))
       .catch((err) => res.status(500).json(err));
   }
 }
 
-module.exports = LinkRouter;
+module.exports = DBRouter;
