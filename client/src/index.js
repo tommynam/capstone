@@ -8,11 +8,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //Import Redux Components
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+//Import Reducers
+import reducers from "./redux/reducers";
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware()}>
+  <Provider store={createStoreWithMiddleware(reducers)}>
     <App />
   </Provider>,
   document.getElementById('root')
