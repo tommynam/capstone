@@ -5,11 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //Import React-Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+//Import Redux Components
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={createStoreWithMiddleware()}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
