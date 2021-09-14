@@ -6,8 +6,7 @@ const app = express();
 require("dotenv").config();
 
 //REQUIRING SERVICE/ROUTERS
-const DBService = require("./services");
-const DBRouter = require("./routes");
+const loginRouter = require("./routes/loginRouter")
 
 //KNEX SETUP
 const knexConfig = require("./knexfile").development;
@@ -15,14 +14,13 @@ const knex = require("knex")(knexConfig);
 
 //MIDDLEWARE
 app.use(cors());
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(morgan("combined"));
 
-///////
 
-const knexService = new DBService(knex);
-
-app.use("/users/", new DBRouter(Service).router());
+//Redirect URLs to their respective router files
+app.use("/login", loginRouter);
 
 
 
