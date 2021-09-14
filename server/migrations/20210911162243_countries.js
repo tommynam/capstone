@@ -1,5 +1,5 @@
 exports.up = function(knex) {
-    return knex.scheme.createTAble("countries", (table) => {
+    return knex.schema.createTable("countries", (table) => {
         table.increments("id");
         table.string("name").notNullable();
         table.integer("provinces");
@@ -8,6 +8,6 @@ exports.up = function(knex) {
   };
   
   exports.down = function(knex) {
-    return knex.scheme.dropTable("countries");
+    return knex.schema.dropTable("countries");
   };
   

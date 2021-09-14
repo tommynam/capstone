@@ -4,9 +4,9 @@ module.exports = {
   development: {
     client: "postgresql",
     connection: {
-      database: process.env.DATABASE_NAME,
-      user: process.env.DATABASE_USERNAME,
-      password: process.env.DATABASE_PASSWORD,
+      database: "capstone",
+      user: "postgres",
+      password: "postgres",
     },
     pool: {
       min: 2,

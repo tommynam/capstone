@@ -1,11 +1,11 @@
 exports.up = function(knex) {
-    return knex.scheme.createTAble("fields", (table) => {
+    return knex.schema.createTable("fields", (table) => {
         table.increments("fieldId");
         table.string("name").notNullable();
     })
   };
   
   exports.down = function(knex) {
-    return knex.scheme.dropTable("fields");
+    return knex.schema.dropTable("fields");
   };
   
