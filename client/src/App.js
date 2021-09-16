@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/home';
 import Login from './components/login';
 import Registration from 'components/registration';
-import Account from 'account';
+import Account from './components/account';
 //import axios from 'axios';
 
 //import { NavBar } from "./components/navbar/navbar";
