@@ -5,7 +5,7 @@ import { SchoolRegistration } from './school';
 const Registration = () => {
 
    // const isStudent = this.state.isStudent;
-    const isStudent = false;
+    const isStudent = true;
 
     return (
         <div>
