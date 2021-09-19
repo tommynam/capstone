@@ -6,13 +6,11 @@ import reportWebVitals from './reportWebVitals';
 //Import React-Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 //Import Redux Components
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-
-//const createStoreWithMiddleware = applyMiddleware()(createStore);
+//import { Provider } from 'react-redux';
+//import { createStore, applyMiddleware } from 'redux';
 
 ReactDOM.render(
-  //<Provider store={createStoreWithMiddleware()}>
+ // <Provider store={configureStore()}>
     <App />,
   //</Provider>,
   document.getElementById('root')

@@ -4,10 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
+/argon-design-system-react
+/holly-react
+/material-kit-react
 
 # testing
 /coverage
-/../material
 
 # production
 /build
