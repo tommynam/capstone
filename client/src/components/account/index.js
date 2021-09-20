@@ -1,22 +1,29 @@
 import React from 'react'
 import { StudentAccount } from './student';
 import { SchoolAccount } from './school';
+import SideNav from 'components/sidenav';
 
 const Account = () => {
 
+  const styles = {
+    display: "flex",
+    margin: 0,
+    padding: 0
+  };
+
    // const isStudent = this.state.isStudent;
-    const isStudent = true;
+    const isStudent = false;
 
     return (
-        <div>
-          <h1>account page</h1>
+      <div style={styles}>
+        <SideNav />
             <div>
                 {isStudent
                     ? <StudentAccount />
                     : <SchoolAccount />
                 }
           </div>
-        </div>
+      </div>
     )
 }
 
