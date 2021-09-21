@@ -2,6 +2,7 @@ import React from 'react'
 import { StudentAccount } from './student';
 import { SchoolAccount } from './school';
 import SideNav from 'components/sidenav';
+import Banner from './banner';
 
 const Account = () => {
 
@@ -17,6 +18,7 @@ const Account = () => {
     return (
       <div style={styles}>
         <SideNav />
+        <Banner/>
             <div>
                 {isStudent
                     ? <StudentAccount />
