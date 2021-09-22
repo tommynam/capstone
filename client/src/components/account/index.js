@@ -18,8 +18,8 @@ const Account = () => {
     return (
       <div style={styles}>
         <SideNav />
-        <Banner/>
             <div>
+            <Banner />
                 {isStudent
                     ? <StudentAccount />
                     : <SchoolAccount />

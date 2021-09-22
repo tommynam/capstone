@@ -7,7 +7,7 @@ import SchoolStatus from './schoolStatus';
 export const SchoolAccount = () => {
     return (
         <Switch>
-            <Route exact path="/" component={ SchoolPersonal }/>
+            <Route exact path="/account" component={ SchoolPersonal }/>
             <Route path="/account/info" component={ SchoolInfo } />
             <Route path="/account/status" component={ SchoolStatus } />
         </Switch>
