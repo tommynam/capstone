@@ -22,30 +22,13 @@ function FaceBook() {
 
   return (
     <div class="container">
-      <Card style={{ width: '600px' }}>
-        <Card.Header>
-          {!login &&
-            <FacebookLogin
-              appId="4647688895286694"
-              autoLoad={true}
-              fields="name,email,picture"
-              scope="public_profile,user_friends"
-              callback={responseFacebook}
-              icon="fa-facebook" />
-          }
-          {login &&
-            <Image src={picture} roundedCircle />
-          }
-        </Card.Header>
-        {login &&
-          <Card.Body>
-            <Card.Title>{data.name}</Card.Title>
-            <Card.Text>
-              {data.email}
-            </Card.Text>
-          </Card.Body>
-        }
-      </Card>
+      <FacebookLogin
+        appId={process.env.REACT_APP_FACEBOOK_APP_ID || ''}
+        autoLoad={true}
+        fields="name,email,picture"
+        onClick={this.componentClicked}
+        callback={this.responseFacebook}
+      />
     </div>
   );
 }
