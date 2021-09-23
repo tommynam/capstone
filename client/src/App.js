@@ -1,4 +1,5 @@
 import './App.css';
+import './fontawesome';
 //Import REACT-ROUTER-DOM
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //Import components

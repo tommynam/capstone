@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Route, Switch } from 'react-router';    
+import SchoolInfo from './schoolInfo';
+import SchoolPersonal from './schoolPersonal';
+import SchoolStatus from './schoolStatus';
 
 export const SchoolAccount = () => {
     return (
-        <div>
-            <h1>School Account</h1>
-        </div>
+        <Switch>
+            <Route exact path="/account" component={ SchoolPersonal }/>
+            <Route path="/account/info" component={ SchoolInfo } />
+            <Route path="/account/status" component={ SchoolStatus } />
+        </Switch>
     )
-}
+};
+

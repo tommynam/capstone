@@ -3,6 +3,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const morgan = require("morgan");
 const app = express();
+//REQUIRE JWT/LOGIN API
+const jwt = require("jsonwebtoken");
+const config = require("./config");
+const users = require("./users")
+
+
 require("dotenv").config();
 
 //REQUIRING SERVICE/ROUTERS
