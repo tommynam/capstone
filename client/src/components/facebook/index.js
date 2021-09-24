@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginFacebookThunk} from "../../services/actions/login";
 import FacebookLogin from 'react-facebook-login';
-import { Card, Image } from 'react-bootstrap';
-import '../../App.css';
 
-function FaceBook() {
+function FaceBook([props]) {
 
-  const [login, setLogin] = useState(false);
-  const [data, setData] = useState({});
-  const [picture, setPicture] = useState('');
-
-  const responseFacebook = (response) => {
-    console.log(response);
-    setData(response);
-    setPicture(response.picture.data.url);
-    if (response.accessToken) {
-      setLogin(true);
-    } else {
-      setLogin(false);
+  const dispatch = useDispatch();
+  const responseFacebook = (userInfo) => {
+    if (userInfo.accessToken) {
+      dispatch(loginFacebookThunk(userInfo.accessToken));
     }
+    return null;
   }
 
   return (
@@ -26,8 +19,8 @@ function FaceBook() {
         appId={process.env.REACT_APP_FACEBOOK_APP_ID || ''}
         autoLoad={true}
         fields="name,email,picture"
-        onClick={this.componentClicked}
-        callback={this.responseFacebook}
+        onClick={()=> {return null}}
+        callback={responseFacebook}
       />
     </div>
   );
