@@ -4,16 +4,16 @@ const config = require("./config");
 const users = require("./users");
 const ExtractJWT = passportJWT.ExtractJwt;
 
-module.exports = () => {
+module.exports = (knex) => {
     const strategy = new passportJWT.Strategy({
         secretOrKey: config.jwtSecret,
         jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken()
-    }, (payload, done) => {
-        //Read JSON/Database data
+    }, async (payload, done) => {
 
-        const user = users[payload.id];
-        if (user) {
-            return done(null, {id: user.id});
+        //Read JSON/Database data
+        const user = await knex("users").where({id:payload.id});
+        if (user[0]) {
+            return done(null, {id: user[0].id});
         } else {
             return done(new Error("User Invalid"), null);
         }

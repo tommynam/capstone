@@ -12,8 +12,6 @@ export const RightBar = () => {
             <p>Or sign up with email</p>
             <br />
             <h1>Create Account</h1>
-            <TextForm />
-            <TextForm />
         </div>
     )
 }

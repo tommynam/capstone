@@ -1,12 +1,14 @@
-import { combineReducers, compose, createStore } from "redux";
-import { studentReducer } from "./students/reducers";
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
+import { getDefaultNormalizer } from '@testing-library/dom';
+import { usersApi } from './users';
 
-const rootReducer = combineReducers({
-    authStore: authReducer,
-    courseStore: courseReducer,
-    studentStore: studentReducer,
+export const store = configureStore({
+    reducer: {
+        reducer: {
+            [usersApi.reducerPath]: usersApi.reducer,
+        }
+    },
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE || compose;
-
-export const store = createStore(rootReducer, composeEnhancers())
+setupListeners(store.dispatch());
