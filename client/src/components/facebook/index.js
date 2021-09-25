@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginFacebookThunk} from "../../services/actions/login";
+import { loginFacebookThunk} from "../../redux/actions/login";
 import FacebookLogin from 'react-facebook-login';
 
 function FaceBook([props]) {

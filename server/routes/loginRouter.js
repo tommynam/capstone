@@ -4,22 +4,22 @@ class loginRouter {
     constructor(loginService) {
         this.loginService = loginService;
     }
-
     //Router function for the login page - define what program does for get/post/etc...
     router() {
         let router = express.Router();
 
         router.get("/", this.get.bind((this)));
         router.post("/", this.get.bind((this)));
-
         return router;
     };
 
     //Define what the get function does
     get(req,res){
-
+        return this.loginService.getUsers(req.body.email, req.body.password)   
+        .then((data) => {
+            res.json(data);
+        })
     };
-
     //Define what the post function does
     post(req,res){
         if(req.body.email && req.body.passowrd) {
